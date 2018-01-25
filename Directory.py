@@ -1,4 +1,5 @@
 import Utils
+import os
 
 '''
 Function that creates a subdirectory with the same path as the file given, and
@@ -10,4 +11,5 @@ commandline, removing the ending
 def createSubDir(fileName):
     fileNameWithoutExtension = Utils.getFileNameWithNoExt(fileName)
     subdirectoryName = Utils.getSubDirName(fileNameWithoutExtension)
-    print("Subdirectory name: ", subdirectoryName)
+    if not (os.path.exists(subdirectoryName)):
+        os.makedirs(subdirectoryName)
