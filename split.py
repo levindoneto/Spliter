@@ -12,16 +12,15 @@ file into smaller parts, also creating token-per-line output. The number
 specified determines the size of the file parts in lines
 '''
 import sys
-import Directory
+import Management
 import File
 
 def main(args):
+    File.createPartsFile("tests/alice.txt", "out.txt", 0, 3)
     try:
         theFile = args[1]
         size = args[2]
-        Directory.createSubDir(theFile)
-        tokens = ["love", "for", "me", "darling"]
-        File.createTokensFile(tokens, "hehe.txt")
+        Management.manager(theFile, size)
     except:
         print("\nOne or more arguments have not been provided\nUsage:")
         print("\tpython split.py text.format 20")

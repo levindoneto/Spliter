@@ -1,7 +1,9 @@
+from itertools import islice
+
 '''
-Function that creates a file with tokens
-@Parameter: List: tokens, Strings: File's name
-@Return: Void: It only creates a file with tokens
+Function that creates a file with tokens.
+@Parameter: List: tokens, Strings: File's name.
+@Return: Void: It only creates a file with tokens.
 '''
 def createTokensFile(tokens, filename):
     tokenFile = open(filename, "w+")
@@ -11,8 +13,14 @@ def createTokensFile(tokens, filename):
 
 '''
 Function that creates a file with the parts of the text
-@Parameter: List: parts of the file, Strings: File's name
+@Parameter: String: path/name of the input file,
+            String: name of the output file,
+            Integer: range bottom, Integer: range top
 @Return: Void: It only creates a file with tokens
 '''
-def createPartsFile(parts, filename):
-    print("Create parts' file")
+def createPartsFile(textFileName, partsFileName, rangeBottom, rangeTop):
+    outputFile = open(partsFileName, "w+")
+    with open(textFileName) as inputFile:
+        head = list(islice(inputFile, rangeBottom, rangeTop))
+    for i in range(len(head)):
+        outputFile.write(head[i])
