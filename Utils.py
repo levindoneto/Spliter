@@ -24,3 +24,11 @@ Function that returns a name of a directory regarding the line ranging
 '''
 def getSubDirNameWithRange(rangeBottom, rangeTop):
     return "_lines" + str(rangeBottom) + "-" + str(rangeTop)
+
+'''
+Function that returns a file's name regarding the line ranging
+@Parameter: Integer: rangeBottom, Integer: rangeTop
+@Return: Strings: File's name
+'''
+def getFileNameWithRange(rangeBottom, rangeTop):
+    return "_lines" + str(rangeBottom) + "-" + str(rangeTop) + ".txt"
