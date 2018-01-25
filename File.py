@@ -20,7 +20,7 @@ Function that creates a file with the parts of the text
 '''
 def createPartsFile(textFileName, partsFileName, rangeBottom, rangeTop):
     outputFile = open(partsFileName, "w+")
-    with open(textFileName) as inputFile:
+    with open('../../' + textFileName) as inputFile:
         head = list(islice(inputFile, rangeBottom, rangeTop))
     for i in range(len(head)):
         outputFile.write(head[i])

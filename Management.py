@@ -13,8 +13,24 @@ def manager(theFile, size):
     numberOfLines = File.getNumberOfLines(theFile)
     createdDirectory = Directory.createSubDir(theFile, True)
     Directory.cd(createdDirectory)
-    for i in range((numberOfLines)):
+    ListOfLinesStr = inputText.readlines()
+    d = 0
+    for i in range(d, numberOfLines, int(size)):
         # Create subdirectories for each set of lines
-        subDir = Utils.getSubDirNameWithRange(i+1, i+int(size))
+        subDir = Utils.getSubDirNameWithRange(d+1, d+int(size))
         createdDirectory = Directory.createSubDir(subDir, False)
-        i += int(size)
+        Directory.cd(createdDirectory)
+        File.createPartsFile(
+            theFile,
+            Utils.getFileNameWithRange(d + 1, d + int(size))
+            ,d + 1,
+            d + int(size)
+        )
+        for j in range(d, d + int(size), 1):
+                if (d < numberOfLines):
+                    File.createTokensFile(
+                        Utils.getTokens(ListOfLinesStr[d]),
+                        Utils.getNameTokenLine(d+1)
+                    )
+                d += 1
+        Directory.cd('../') # In order to fill another subdirectory
