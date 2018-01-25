@@ -1,4 +1,6 @@
 import re
+from nltk.tokenize import TweetTokenizer
+tknzr = TweetTokenizer()
 
 '''
 Function that removes the extension of a file, regardless if it has a provided
@@ -40,3 +42,12 @@ Function that returns a file's name for a tokens' file regarding the text's line
 '''
 def getNameTokenLine(line):
     return "_line" + str(line) + ".tok"
+
+'''
+Function that returns a list of words and punctuation symbols given a line of the
+input.
+@Parameter: String: line of a text.
+@Return: List: tokens.
+'''
+def getTokens(lineInput):
+    return tknzr.tokenize(lineInput)
