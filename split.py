@@ -18,10 +18,14 @@ def main(args):
     try:
         theFile = args[1]
         size = args[2]
-        Management.manager(theFile, size)
+        if (int(size) > 0):
+            Management.manager(theFile, size)
+        else:
+            print("The size must be greater than 0")
     except:
-        print("\nOne or more arguments have not been provided\nUsage:")
+        print("\nOne or more arguments have not been provided correctly\nUsage:")
         print("\tpython split.py text.format size")
+        print("Verify if the file exists")
 
 if __name__ == '__main__':
     main(sys.argv)

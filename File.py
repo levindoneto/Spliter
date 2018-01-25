@@ -22,7 +22,6 @@ def createPartsFile(textFileName, partsFileName, rangeBottom, rangeTop):
     outputFile = open(partsFileName, "w+")
     with open('../../' + textFileName) as inputFile:
         head = list(islice(inputFile, rangeBottom-1, rangeTop))
-        print ('head: ', head)
     for i in range(len(head)):
         outputFile.write(head[i])
 
