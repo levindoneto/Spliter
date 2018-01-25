@@ -15,4 +15,4 @@ Function that creates a name for the subdirectory based on the file name
 @Return: Strings: Subdirectory's name
 '''
 def getSubDirName(fileNameWithoutExt):
-    print("Get sub dir name")
+    return fileNameWithoutExt + '-data'

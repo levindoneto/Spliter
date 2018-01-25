@@ -8,4 +8,6 @@ commandline, removing the ending
 @Return: Void: It only creates a directory
 '''
 def createSubDir(fileName):
-    print(Utils.getFileNameWithNoExt(fileName))
+    fileNameWithoutExtension = Utils.getFileNameWithNoExt(fileName)
+    subdirectoryName = Utils.getSubDirName(fileNameWithoutExtension)
+    print("Subdirectory name: ", subdirectoryName)
