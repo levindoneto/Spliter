@@ -32,3 +32,11 @@ Function that returns a file's name regarding the line ranging
 '''
 def getFileNameWithRange(rangeBottom, rangeTop):
     return "_lines" + str(rangeBottom) + "-" + str(rangeTop) + ".txt"
+
+'''
+Function that returns a file's name for a tokens' file regarding the text's line
+@Parameter: Integer: line
+@Return: Strings: Tokens file's name
+'''
+def getNameTokenLine(line):
+    return "_line" + str(line) + ".tok"
