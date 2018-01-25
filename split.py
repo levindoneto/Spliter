@@ -13,11 +13,8 @@ specified determines the size of the file parts in lines
 '''
 import sys
 import Management
-import File
-import Utils
 
 def main(args):
-    print(Utils.getTokens('So lets go", she said ...'))
     try:
         theFile = args[1]
         size = args[2]

@@ -24,3 +24,11 @@ def createPartsFile(textFileName, partsFileName, rangeBottom, rangeTop):
         head = list(islice(inputFile, rangeBottom, rangeTop))
     for i in range(len(head)):
         outputFile.write(head[i])
+
+'''
+Function that returns the number of lines of a file
+@Parameter: String: file (it might contain the pat)
+@Return: Integer: Number of lines
+'''
+def getNumberOfLines(theFile):
+    return sum(1 for line in open(theFile))
