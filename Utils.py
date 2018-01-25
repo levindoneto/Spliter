@@ -1,3 +1,5 @@
+import re
+
 '''
 Function that removes the extension of a file, regardless if it has a provided
 path
@@ -5,7 +7,7 @@ path
 @Return: String: File's name with no extension
 '''
 def getFileNameWithNoExt(fileName):
-    print("Get file name with no extension")
+    return fileName.replace('/',' ').replace('.',' ').split()[-2]
 
 '''
 Function that creates a name for the subdirectory based on the file name
