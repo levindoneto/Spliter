@@ -15,6 +15,10 @@ import sys
 import Management
 
 def main(args):
+    theFile = args[1]
+    size = args[2]
+    Management.manager(theFile, size)
+    '''
     try:
         theFile = args[1]
         size = args[2]
@@ -22,6 +26,6 @@ def main(args):
     except:
         print("\nOne or more arguments have not been provided\nUsage:")
         print("\tpython split.py text.format 20")
-
+    '''
 if __name__ == '__main__':
     main(sys.argv)
