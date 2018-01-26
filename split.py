@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
 
 '''
-Spliter
+Splitter
 
 Usage:
     python split.py text.ext size
