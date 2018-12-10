@@ -22,8 +22,8 @@ def manager(theFile, size):
         Directory.cd(createdDirectory)
         File.createPartsFile(
             theFile,
-            Utils.getFileNameWithRange(d + 1, d + int(size))
-            ,d + 1,
+            Utils.getFileNameWithRange(d + 1, d + int(size)),
+            d + 1,
             d + int(size)
         )
         for j in range(d, d + int(size), 1):
